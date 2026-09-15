@@ -68,7 +68,7 @@ footer.reveal { animation-delay: .25s; }
   text-transform: uppercase;
 }
 
-h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0;color:red; }
+h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: 0; }
 
 h1 {
   max-width: 590px;

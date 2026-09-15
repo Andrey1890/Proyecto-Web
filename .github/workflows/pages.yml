@@ -1,10 +1,11 @@
-name: Publicar Hola Mundo
+name: Publicar sitio
 
 on:
   push:
     branches: [main]
     paths:
-      - 'hola mundo/**'
+      - 'index.html'
+      - 'styles.css'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -33,7 +34,7 @@ jobs:
       - name: Preparar sitio
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './hola mundo'
+          path: '.'
 
       - name: Publicar
         id: deployment

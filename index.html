@@ -30,7 +30,13 @@
         </span>
       </a>
 
-      <nav class="main-nav" aria-label="Navegación principal">
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-menu" aria-label="Abrir menú de navegación">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="main-nav" id="main-menu" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#productos">Productos</a>
@@ -77,7 +83,6 @@
               Línea Dermaclar
             </div>
           </div>
-          <figcaption class="visually-hidden">Imagen de referencia para el catálogo Dermakor.</figcaption>
         </figure>
       </div>
     </section>
@@ -331,6 +336,23 @@
     </section>
 
   </main>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelectorAll('#main-menu a');
+    function setNav(open) {
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+      document.body.classList.toggle('nav-open', open);
+    }
+    navToggle.addEventListener('click', () => {
+      setNav(navToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    navLinks.forEach(link => link.addEventListener('click', () => setNav(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') setNav(false);
+    });
+  </script>
 
   <footer class="site-footer">
     <div class="container footer-grid">

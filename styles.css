@@ -212,6 +212,29 @@ h1, h2, h3 { font-family: var(--font-display); line-height: 1.18; letter-spacing
 .header-cta.btn-primary { background: var(--mint-deep); color: var(--white); }
 .header-cta.btn-primary:hover { background: var(--sea); }
 
+/* Botón hamburguesa (móvil) */
+.nav-toggle {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: .55rem .5rem;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  border-radius: 999px;
+  background: var(--teal-ink);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -592,7 +615,6 @@ section:not(.hero) { padding-block: 3.5rem; }
 .footer-brand p { max-width: 20rem; margin-top: 1rem; font-size: .92rem; }
 
 .brand-mark-small { margin-top: .2rem; }
-
 .footer-nav a, .footer-legal a { display: block; font-size: .92rem; margin-bottom: .65rem; transition: color .18s ease; }
 .footer-nav a:hover, .footer-legal a:hover { color: var(--mint); }
 .footer-contact span { display: block; font-size: .92rem; margin-bottom: .65rem; }
@@ -630,6 +652,28 @@ section:not(.hero) { padding-block: 3.5rem; }
 .chip-top { left: -2%; }
 .chip-bottom { right: -2%; }
 
+/* Menú móvil desplegable (hasta 767 px) */
+@media (max-width: 767.98px) {
+  body.nav-open .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-md);
+    padding: .6rem 1rem 1rem;
+  }
+  body.nav-open .main-nav a {
+    padding: .95rem .5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  body.nav-open .main-nav a:last-child { border-bottom: 0; }
+}
+
 /* Hasta 480 px: base compacta y de una columna. */
 @media (max-width: 480px) {
   .brand-text small { font-size: .62rem; }
@@ -663,6 +707,7 @@ section:not(.hero) { padding-block: 3.5rem; }
 /* Desde 768 px: navegación visible y composición de escritorio ligera. */
 @media (min-width: 768px) {
   .header-inner { gap: 1.2rem; }
+  .nav-toggle { display: none; }
   .main-nav { display: flex; }
   .header-cta { display: inline-flex; }
   .hero-grid { gap: 4rem; }

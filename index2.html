@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermakor | Dermocosmética Dermaclar</title>
+  <meta name="description" content="Dermakor distribuye soluciones dermocosméticas Dermaclar para profesionales y negocios de belleza.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#12343b',
+            teal: '#176f73',
+            aqua: '#45b9ae',
+            mist: '#e9f7f4',
+            gold: '#f3b63f',
+            coral: '#e98261'
+          },
+          fontFamily: {
+            display: ['Poppins', 'sans-serif'],
+            sans: ['Inter', 'sans-serif']
+          },
+          boxShadow: {
+            soft: '0 18px 50px rgba(18, 52, 59, .12)',
+            card: '0 10px 30px rgba(18, 52, 59, .08)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f7fbfa; }
+    .hero-pattern { background: radial-gradient(circle at 15% 20%, rgba(243,182,63,.22), transparent 25%), radial-gradient(circle at 90% 70%, rgba(69,185,174,.25), transparent 30%); }
+    .reveal { animation: reveal .7s ease both; }
+    .delay-1 { animation-delay: .12s; }
+    .delay-2 { animation-delay: .24s; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="font-sans text-ink antialiased">
+  <header class="sticky top-0 z-50 border-b border-teal/10 bg-white/90 backdrop-blur-lg">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#inicio" class="flex items-center gap-3" aria-label="Dermakor inicio">
+        <span class="grid h-11 w-11 place-items-center rounded-2xl bg-teal text-white shadow-card">
+          <svg viewBox="0 0 48 48" class="h-8 w-8" aria-hidden="true"><path fill="currentColor" d="M24 2C12 8 8 20 8 32a16 16 0 0 0 32 0c0-12-4-24-16-30z"/><path fill="#d9f5ef" d="M24 10a12 12 0 0 0-6 22.5c1-3.5 2.7-6.2 5-8.2 1.3-1.2 3.4-.9 4.5.3 1 .7 1.9 1.6 2.5 2.7a12 12 0 0 1-6 17.7A16 16 0 0 0 32 32c0-11-3.7-19.4-8-22z"/></svg>
+        </span>
+        <span class="leading-tight"><strong class="block font-display text-xl font-bold">Dermakor</strong><small class="text-[10px] font-bold uppercase tracking-[.16em] text-teal">Distribuidora Dermaclar</small></span>
+      </a>
+      <button id="menuButton" class="rounded-xl p-2 text-ink lg:hidden" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav id="menu" class="absolute left-0 top-full hidden w-full border-b border-teal/10 bg-white px-5 py-5 shadow-lg lg:static lg:flex lg:w-auto lg:items-center lg:gap-8 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none" aria-label="Navegación principal">
+        <a class="block py-2 text-sm font-semibold text-ink/70 transition hover:text-teal" href="#nosotros">Nosotros</a>
+        <a class="block py-2 text-sm font-semibold text-ink/70 transition hover:text-teal" href="#productos">Productos</a>
+        <a class="block py-2 text-sm font-semibold text-ink/70 transition hover:text-teal" href="#beneficios">Beneficios</a>
+        <a class="mt-3 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-sm font-bold text-[#503b0c] shadow-md transition hover:-translate-y-0.5 hover:bg-[#f7c357] lg:mt-0" href="#contacto">Cotizar ahora <span class="ml-2" aria-hidden="true">→</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero-pattern overflow-hidden bg-[#0d4b55] text-white">
+      <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 py-16 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-24">
+        <div class="reveal">
+          <span class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#c7eee8]">Distribución Dermaclar</span>
+          <h1 class="max-w-2xl font-display text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-7xl">Cuidado de la piel con <span class="text-gold">ciencia y confianza.</span></h1>
+          <p class="mt-6 max-w-xl text-lg leading-8 text-white/75">Llevamos dermocosmética profesional a farmacias, consultorios y emprendimientos con atención cercana y soluciones para cada necesidad de la piel.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href="#productos" class="inline-flex items-center justify-center rounded-full bg-gold px-6 py-3.5 font-bold text-[#503b0c] shadow-lg transition hover:-translate-y-1 hover:bg-[#f7c357]">Explorar catálogo <span class="ml-2" aria-hidden="true">↗</span></a>
+            <a href="#contacto" class="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3.5 font-bold text-white transition hover:bg-white/10">Quiero distribuir</a>
+          </div>
+          <div class="mt-12 grid max-w-lg grid-cols-3 gap-5 border-t border-white/15 pt-6 text-sm text-white/70">
+            <div><strong class="block font-display text-2xl text-white">B2B</strong>Atención profesional</div>
+            <div><strong class="block font-display text-2xl text-white">5+</strong>Líneas de cuidado</div>
+            <div><strong class="block font-display text-2xl text-white">1:1</strong>Asesoría cercana</div>
+          </div>
+        </div>
+        <div class="reveal delay-1 relative mx-auto w-full max-w-lg">
+          <div class="absolute -right-5 -top-6 h-32 w-32 rounded-full border border-gold/40"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border-8 border-white/10 bg-white/10 shadow-soft">
+            <img class="h-[500px] w-full object-cover" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1000&q=85" alt="Productos de cuidado facial sobre una superficie clara" width="1000" height="1150">
+            <div class="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/90 p-4 text-ink shadow-lg backdrop-blur">
+              <div class="flex items-center justify-between"><div><p class="text-xs font-bold uppercase tracking-[.16em] text-teal">Línea Dermaclar</p><p class="mt-1 font-display text-xl font-bold">Rutinas que acompañan</p></div><span class="grid h-11 w-11 place-items-center rounded-full bg-mist text-teal">✦</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="nosotros" class="bg-white px-5 py-20 lg:px-8 lg:py-28">
+      <div class="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-[1.5rem] bg-mist p-6 sm:p-8"><span class="text-3xl text-teal">◌</span><p class="mt-12 font-display text-2xl font-bold">Claridad</p><p class="mt-2 text-sm leading-6 text-ink/60">Información ordenada para decidir mejor.</p></div>
+          <div class="mt-10 rounded-[1.5rem] bg-[#fff5dc] p-6 sm:p-8"><span class="text-3xl text-gold">✦</span><p class="mt-12 font-display text-2xl font-bold">Respaldo</p><p class="mt-2 text-sm leading-6 text-ink/60">Un socio comercial cerca de tu negocio.</p></div>
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[.2em] text-teal">Una red que cuida</span>
+          <h2 class="mt-4 max-w-2xl font-display text-3xl font-bold leading-tight sm:text-5xl">Dermaclar llega más lejos cuando crecemos juntos.</h2>
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/65">En Dermakor acercamos una propuesta dermocosmética pensada para consumidores, profesionales y negocios que buscan construir rutinas de cuidado con productos confiables.</p>
+          <a href="#contacto" class="mt-8 inline-flex items-center font-bold text-teal transition hover:text-aqua">Conoce nuestra propuesta <span class="ml-2">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="productos" class="bg-mist px-5 py-20 lg:px-8 lg:py-28">
+      <div class="mx-auto max-w-7xl">
+        <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><span class="text-xs font-bold uppercase tracking-[.2em] text-teal">Línea de productos</span><h2 class="mt-3 font-display text-3xl font-bold sm:text-5xl">Encuentra tu enfoque.</h2></div><p class="max-w-sm text-ink/60">Soluciones organizadas por las necesidades más frecuentes de la piel.</p></div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <article class="group rounded-[1.5rem] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#fff1dd] text-2xl text-coral">✧</span><p class="mt-8 text-xs font-bold uppercase tracking-[.16em] text-coral">Antimanchas</p><h3 class="mt-2 font-display text-2xl font-bold">Línea Aclarante</h3><p class="mt-3 leading-7 text-ink/60">Tratamientos para manchas e hiperpigmentación.</p><a href="#contacto" class="mt-6 inline-block font-bold text-teal">Ver presentaciones →</a></article>
+          <article class="group rounded-[1.5rem] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-mist text-2xl text-teal">⌁</span><p class="mt-8 text-xs font-bold uppercase tracking-[.16em] text-teal">Piel grasa</p><h3 class="mt-2 font-display text-2xl font-bold">Línea Control</h3><p class="mt-3 leading-7 text-ink/60">Rutinas para piel grasa y con tendencia acneica.</p><a href="#contacto" class="mt-6 inline-block font-bold text-teal">Ver presentaciones →</a></article>
+          <article class="group rounded-[1.5rem] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#e7f1fb] text-2xl text-[#4980a8]">◒</span><p class="mt-8 text-xs font-bold uppercase tracking-[.16em] text-[#4980a8]">Hidratación</p><h3 class="mt-2 font-display text-2xl font-bold">Línea Hidra</h3><p class="mt-3 leading-7 text-ink/60">Hidratación profunda y cuidado de la barrera.</p><a href="#contacto" class="mt-6 inline-block font-bold text-teal">Ver presentaciones →</a></article>
+          <article class="group rounded-[1.5rem] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#fff5dc] text-2xl text-gold">☼</span><p class="mt-8 text-xs font-bold uppercase tracking-[.16em] text-[#a67610]">Protección</p><h3 class="mt-2 font-display text-2xl font-bold">Línea Solar</h3><p class="mt-3 leading-7 text-ink/60">Protección diaria con texturas ligeras.</p><a href="#contacto" class="mt-6 inline-block font-bold text-teal">Ver presentaciones →</a></article>
+          <article class="group rounded-[1.5rem] bg-white p-7 shadow-card transition hover:-translate-y-1 hover:shadow-soft"><span class="grid h-12 w-12 place-items-center rounded-2xl bg-[#f6e9e6] text-2xl text-coral">❋</span><p class="mt-8 text-xs font-bold uppercase tracking-[.16em] text-coral">Piel sensible</p><h3 class="mt-2 font-display text-2xl font-bold">Línea Gentle</h3><p class="mt-3 leading-7 text-ink/60">Fórmulas suaves para pieles reactivas.</p><a href="#contacto" class="mt-6 inline-block font-bold text-teal">Ver presentaciones →</a></article>
+          <article class="flex flex-col justify-between rounded-[1.5rem] bg-teal p-7 text-white shadow-card"><div><span class="text-3xl text-gold">+</span><h3 class="mt-8 font-display text-2xl font-bold">¿Buscas otra línea?</h3><p class="mt-3 leading-7 text-white/70">Solicita el catálogo completo Dermaclar.</p></div><a href="#contacto" class="mt-8 inline-flex items-center font-bold text-gold">Solicitar catálogo <span class="ml-2">→</span></a></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="beneficios" class="bg-white px-5 py-20 lg:px-8 lg:py-28"><div class="mx-auto max-w-7xl"><div class="max-w-2xl"><span class="text-xs font-bold uppercase tracking-[.2em] text-teal">Por qué Dermakor</span><h2 class="mt-3 font-display text-3xl font-bold sm:text-5xl">Un aliado para cada etapa.</h2></div><div class="mt-12 grid gap-8 border-t border-ink/10 pt-10 md:grid-cols-4"><div><span class="text-2xl text-teal">◈</span><h3 class="mt-5 font-display text-xl font-bold">Información clara</h3><p class="mt-3 leading-7 text-ink/60">Conoce presentaciones y condiciones antes de comprar.</p></div><div><span class="text-2xl text-teal">↗</span><h3 class="mt-5 font-display text-xl font-bold">Logística cercana</h3><p class="mt-3 leading-7 text-ink/60">Consulta opciones de entrega para tu ciudad.</p></div><div><span class="text-2xl text-teal">⌁</span><h3 class="mt-5 font-display text-xl font-bold">Precios mayoristas</h3><p class="mt-3 leading-7 text-ink/60">Alternativas para compras profesionales.</p></div><div><span class="text-2xl text-teal">✦</span><h3 class="mt-5 font-display text-xl font-bold">Acompañamiento</h3><p class="mt-3 leading-7 text-ink/60">Materiales para conocer mejor cada línea.</p></div></div></div></section>
+
+    <section id="contacto" class="bg-[#0d4b55] px-5 py-20 text-white lg:px-8 lg:py-28"><div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start"><div><span class="text-xs font-bold uppercase tracking-[.2em] text-[#a9e4dc]">Contacto</span><h2 class="mt-4 font-display text-4xl font-bold leading-tight sm:text-5xl">Hablemos de tu próximo pedido.</h2><p class="mt-6 max-w-md text-lg leading-8 text-white/70">Cuéntanos qué línea te interesa y te ayudamos a encontrar la mejor opción.</p><div class="mt-10 space-y-5 text-sm"><p><strong class="block text-white">Correo</strong><span class="text-white/60">contacto por confirmar</span></p><p><strong class="block text-white">WhatsApp</strong><span class="text-white/60">número por confirmar</span></p></div></div><form id="contactForm" class="rounded-[1.5rem] bg-white p-6 text-ink shadow-soft sm:p-8"><h3 class="font-display text-2xl font-bold">Solicitar catálogo y precios</h3><div class="mt-7 grid gap-5 sm:grid-cols-2"><label class="text-sm font-semibold">Nombre<input class="mt-2 w-full rounded-xl border border-ink/15 px-4 py-3 font-normal outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20" type="text" name="nombre" placeholder="Tu nombre" required></label><label class="text-sm font-semibold">Empresa<input class="mt-2 w-full rounded-xl border border-ink/15 px-4 py-3 font-normal outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20" type="text" name="empresa" placeholder="Tu negocio" required></label><label class="text-sm font-semibold">Correo<input class="mt-2 w-full rounded-xl border border-ink/15 px-4 py-3 font-normal outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20" type="email" name="correo" placeholder="correo@ejemplo.com" required></label><label class="text-sm font-semibold">WhatsApp<input class="mt-2 w-full rounded-xl border border-ink/15 px-4 py-3 font-normal outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20" type="tel" name="telefono" placeholder="+00 000 000 0000"></label></div><label class="mt-5 block text-sm font-semibold">Línea de interés<select class="mt-2 w-full rounded-xl border border-ink/15 bg-white px-4 py-3 font-normal outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" name="linea"><option>Catálogo completo</option><option>Línea Aclarante</option><option>Línea Control</option><option>Línea Hidra</option><option>Línea Solar</option><option>Línea Gentle</option></select></label><label class="mt-5 block text-sm font-semibold">Mensaje<textarea class="mt-2 w-full resize-y rounded-xl border border-ink/15 px-4 py-3 font-normal outline-none focus:border-teal focus:ring-2 focus:ring-teal/20" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas..."></textarea></label><button class="mt-6 w-full rounded-full bg-gold px-6 py-3.5 font-bold text-[#503b0c] transition hover:bg-[#f7c357]" type="submit">Enviar solicitud <span class="ml-2">→</span></button><p id="formMessage" class="mt-4 hidden text-center text-sm font-semibold text-teal" role="status"></p></form></div></section>
+  </main>
+
+  <footer class="bg-[#083b44] px-5 py-8 text-sm text-white/60 lg:px-8"><div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 sm:flex-row"><span>© 2026 Dermakor</span><span>Distribuidora de productos Dermaclar</span></div></footer>
+  <script>
+    const menuButton = document.querySelector('#menuButton');
+    const menu = document.querySelector('#menu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Abrir menú' : 'Cerrar menú');
+      menu.classList.toggle('hidden', isOpen);
+    });
+    document.querySelectorAll('#menu a').forEach(link => link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menú');
+      menu.classList.add('hidden');
+    }));
+    document.querySelector('#contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const message = document.querySelector('#formMessage');
+      message.textContent = 'Solicitud preparada. Conectaremos este formulario con tu canal de atención.';
+      message.classList.remove('hidden');
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>

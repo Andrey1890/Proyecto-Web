@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%231b6e73' d='M24 2C12 8 8 20 8 32a16 16 0 0 0 32 0c0-12-4-24-16-30z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -30,7 +31,14 @@
         </span>
       </a>
 
-      <nav class="main-nav" aria-label="Navegación principal">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+        <span class="visually-hidden">Abrir menú</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#productos">Productos</a>
@@ -50,15 +58,15 @@
         <div class="hero-copy">
           <span class="eyebrow">Distribución Dermaclar</span>
           <h1>Cuidado de la piel con <span class="accent">ciencia y confianza</span></h1>
-          <p>Somos Dermakor, distribuidora de productos <strong>Dermaclar</strong>. Llevamos dermocosmética profesional a farmacias, consultorios y emprendimientos de todo el país con precios de mayoreo y entrega puntual.</p>
+          <p>Somos Dermakor, distribuidora de productos <strong>Dermaclar</strong>. Presentamos opciones de dermocosmética para negocios y consumidores que buscan información clara antes de comprar.</p>
           <div class="hero-actions">
             <a href="#productos" class="btn btn-primary">Ver productos</a>
             <a href="#contacto" class="btn btn-ghost">Hazte distribuidor</a>
           </div>
           <ul class="hero-mini">
-            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5.5 3.4 9.7 8 11 4.6-1.3 8-5.5 8-11V5l-8-3z"/></svg> Catálogo por confirmar</li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 1 5-5 5 5 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"/></svg> Atención para profesionales</li>
-            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg> Cobertura por confirmar</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2 4 5v6c0 5.5 3.4 9.7 8 11 4.6-1.3 8-5.5 8-11V5l-8-3z"/></svg> Catálogo para consulta</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 12a5 5 0 1 1 5-5 5 5 0 0 1-5 5zm0-8a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"/></svg> Atención para negocios</li>
+            <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/></svg> Cobertura según consulta</li>
           </ul>
         </div>
         <figure class="hero-visual">
@@ -70,7 +78,7 @@
             </div>
             <div class="float-chip chip-top">
               <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              Información por confirmar
+              Información de producto
             </div>
             <div class="float-chip chip-bottom">
               <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
@@ -98,15 +106,15 @@
         <div class="about-media">
           <div class="about-card">
             <h3>Dermaclar</h3>
-            <p>línea de productos a presentar</p>
+            <p>Dermocosmética para el cuidado facial</p>
           </div>
           <div class="about-card">
             <h3>B2B + B2C</h3>
-            <p>atención para negocios y consumidores</p>
+            <p>Atención para negocios y consumidores</p>
           </div>
           <div class="about-card">
             <h3>Consulta</h3>
-            <p>disponibilidad y cobertura por confirmar</p>
+            <p>Consulta de disponibilidad y cobertura</p>
           </div>
         </div>
         <div class="about-copy">
@@ -116,8 +124,8 @@
           <ul class="check-list">
             <li>Catálogo organizado por necesidades de la piel.</li>
             <li>Opciones de atención para consumidor y profesional.</li>
-            <li>Precios, cobertura y disponibilidad por confirmar.</li>
-            <li>Capacitación como línea de servicio para evaluar.</li>
+            <li>Precios, cobertura y disponibilidad se consultan antes de comprar.</li>
+            <li>Información de producto para elegir cada línea.</li>
           </ul>
           <a href="#contacto" class="btn btn-outline">Conocer más</a>
         </div>
@@ -130,7 +138,7 @@
         <div class="section-head">
           <span class="eyebrow">Línea de productos</span>
           <h2>Catálogo Dermaclar</h2>
-          <p>Selección de las líneas que manejamos en inventario permanente.</p>
+          <p>Selección de líneas presentadas para consulta comercial.</p>
         </div>
 
         <div class="product-grid">
@@ -141,7 +149,7 @@
             <div class="product-body">
               <span class="tag">Antimanchas</span>
               <h3>Línea Aclarante</h3>
-              <p>Tratamientos para manchas e hiperpigmentación con resultados visibles.</p>
+              <p>Opciones de cuidado orientadas a manchas e hiperpigmentación.</p>
               <a class="product-link" href="#contacto">Ver presentaciones</a>
             </div>
           </article>
@@ -177,7 +185,7 @@
             <div class="product-body">
               <span class="tag">Protección solar</span>
               <h3>Línea Solar</h3>
-              <p>Bloqueadores y protectores con texturas ligeras y alta protección.</p>
+              <p>Opciones de protección solar para incorporar a la rutina diaria.</p>
               <a class="product-link" href="#contacto">Ver presentaciones</a>
             </div>
           </article>
@@ -189,16 +197,16 @@
             <div class="product-body">
               <span class="tag">Piel sensible</span>
               <h3>Línea Gentle</h3>
-              <p>Fórmulas suaves, sin fragancia, para pieles sensibles y reactivas.</p>
+              <p>Opciones de cuidado para pieles sensibles y reactivas.</p>
               <a class="product-link" href="#contacto">Ver presentaciones</a>
             </div>
           </article>
 
           <article class="product-card product-card-cta">
             <div class="product-body">
-              <h3>¿Buscas otra línea?</h3>
-              <p>Manejamos el catálogo completo de Dermaclar bajo pedido.</p>
-              <a href="#contacto" class="btn btn-primary">Solicitar catálogo completo</a>
+              <h3>¿Buscas otra categoría?</h3>
+              <p>Indica qué producto necesitas y revisaremos la información disponible.</p>
+              <a href="#contacto" class="btn btn-primary">Hacer una consulta</a>
             </div>
           </article>
         </div>
@@ -226,56 +234,47 @@
             <span class="benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 3v2h7v8h-2V7h-5v2l-4-4 4-4v2zm7 12v3H8a2 2 0 0 1-2-2V8h2v10h9v-3l4 4z"/></svg>
             </span>
-            <h3>Logística propia</h3>
-            <p>Consulta las opciones de entrega disponibles para tu ciudad o negocio.</p>
+            <h3>Opciones de entrega</h3>
+            <p>Consulta las alternativas de entrega para tu ciudad o negocio.</p>
           </div>
           <div class="benefit">
             <span class="benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M11.8 10.9a3 3 0 0 1 4.2 0l5.4 5.4-4.2 4.2-5.4-5.4a3 3 0 0 1 0-4.2zM3 21V3h5v18zM10 3h5v3h-5z"/></svg>
             </span>
-            <h3>Precios de mayoreo</h3>
-            <p>Solicita información sobre precios para consumidor y compras profesionales.</p>
+            <h3>Condiciones comerciales</h3>
+            <p>Solicita información sobre precios y cantidades para tu compra.</p>
           </div>
           <div class="benefit">
             <span class="benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2a7 7 0 0 1 7 7c0 5-3.5 9-7 9s-7-4-7-9a7 7 0 0 1 7-7zm0 2a5 5 0 0 0-5 5c0 4.2 2.4 6.8 5 7 2.6-.2 5-2.8 5-7a5 5 0 0 0-5-5zm-1 4.5L9.5 10 12 12.5l2.5-2.5L13 9l-1 1zM6 21h12v2H6z"/></svg>
             </span>
-            <h3>Formación continua</h3>
-            <p>Explora talleres y materiales educativos para conocer mejor la línea Dermaclar.</p>
+            <h3>Orientación de compra</h3>
+            <p>Compara las líneas y consulta cuál se ajusta a tu necesidad.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TESTIMONIOS -->
-    <section class="testimonials">
+    <!-- INFORMACION DE COMPRA -->
+    <section class="service-notes">
       <div class="container">
         <div class="section-head light">
-          <span class="eyebrow eye-light">Clientes que confían</span>
-          <h2>Lo que dicen nuestros aliados</h2>
+          <span class="eyebrow light">Antes de comprar</span>
+          <h2>Información para tomar una decisión</h2>
         </div>
-        <div class="quote-grid">
-          <figure class="quote">
-            <blockquote>“Aquí puede incorporarse una reseña verificada de un aliado.”</blockquote>
-            <figcaption>
-              <span class="quote-avatar">LM</span>
-              <div><strong>Laura Méndez</strong><small>Farmacia San Rafael</small></div>
-            </figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Añade una experiencia real sobre la atención a profesionales.”</blockquote>
-            <figcaption>
-              <span class="quote-avatar">DV</span>
-              <div><strong>David Villanueva</strong><small>Dermacenter VIP</small></div>
-            </figcaption>
-          </figure>
-          <figure class="quote">
-            <blockquote>“Añade una reseña comprobable sobre precios y disponibilidad.”</blockquote>
-            <figcaption>
-              <span class="quote-avatar">CG</span>
-              <div><strong>Carol Gutiérrez</strong><small>Emprendimiento Belleza Glow</small></div>
-            </figcaption>
-          </figure>
+        <div class="service-note-grid">
+          <article class="service-note">
+            <h3>Revisa la línea</h3>
+            <p>Consulta la categoría, presentación y uso previsto de cada producto.</p>
+          </article>
+          <article class="service-note">
+            <h3>Indica tu necesidad</h3>
+            <p>Comparte si buscas una compra personal, profesional o para tu negocio.</p>
+          </article>
+          <article class="service-note">
+            <h3>Confirma condiciones</h3>
+            <p>Solicita disponibilidad, precios, cobertura y opciones de entrega.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -290,27 +289,27 @@
           <ul class="contact-list">
             <li>
               <span class="c-icon" aria-hidden="true">&#9993;</span>
-              <div><strong>Correo por confirmar</strong><small>Cotizaciones y pedidos</small></div>
+              <div><strong>Consultas comerciales</strong><small>Catálogo, precios y pedidos</small></div>
             </li>
             <li>
               <span class="c-icon" aria-hidden="true">&#9742;</span>
-              <div><strong>Teléfono por confirmar</strong><small>Centro de atención</small></div>
+              <div><strong>Atención para negocios</strong><small>Compras profesionales y retail</small></div>
             </li>
             <li>
               <span class="c-icon" aria-hidden="true">&#9200;</span>
-              <div><strong>Horario por confirmar</strong><small>Atención comercial</small></div>
+              <div><strong>Información de entrega</strong><small>Cobertura y disponibilidad</small></div>
             </li>
           </ul>
         </div>
         <form class="contact-form" action="#" method="post">
           <h3>Solicitar catálogo y precios</h3>
           <div class="field-row">
-            <label>Nombre<input type="text" name="nombre" placeholder="Tu nombre" required></label>
-            <label>Empresa<input type="text" name="empresa" placeholder="Nombre de tu negocio" required></label>
+            <label>Nombre<input type="text" name="nombre" autocomplete="name" placeholder="Tu nombre" required></label>
+            <label>Empresa<input type="text" name="empresa" autocomplete="organization" placeholder="Nombre de tu negocio" required></label>
           </div>
           <div class="field-row">
-            <label>Correo<input type="email" name="correo" placeholder="correo@ejemplo.com" required></label>
-            <label>Teléfono / WhatsApp<input type="tel" name="telefono" placeholder="+00 000 000 0000"></label>
+            <label>Correo<input type="email" name="correo" autocomplete="email" placeholder="correo@ejemplo.com" required></label>
+            <label>Teléfono / WhatsApp<input type="tel" name="telefono" autocomplete="tel" placeholder="+00 000 000 0000"></label>
           </div>
           <label>¿Qué línea te interesa?
             <select name="linea">
@@ -324,7 +323,7 @@
           </label>
           <label>Mensaje<textarea name="mensaje" rows="3" placeholder="Cuéntanos tu volumen estimado de compra..."></textarea></label>
           <button class="btn btn-primary" type="submit">Enviar solicitud</button>
-          <p class="form-note">Tus datos están protegidos y solo se usan para responder tu solicitud.</p>
+          <p class="form-note">Completa los campos requeridos para preparar tu consulta comercial.</p>
           <a class="whatsapp-link" href="https://wa.me/593999999999">Escribir por WhatsApp (número demostrativo)</a>
         </form>
       </div>
@@ -352,9 +351,9 @@
       </nav>
       <div class="footer-contact">
         <strong>Contacto</strong>
-        <span>Correo por confirmar</span>
-        <span>WhatsApp demostrativo</span>
-        <span>Horario por confirmar</span>
+        <span>Consultas comerciales</span>
+        <span>Atención para negocios</span>
+        <span>Información de entrega</span>
       </div>
       <div class="footer-legal">
         <strong>Legal</strong>

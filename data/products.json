@@ -1,51 +1,157 @@
 {
   "currency": "USD",
-  "updatedAt": "2026-10-05T12:00:00-05:00",
+  "updatedAt": "2026-10-05T23:40:21-05:00",
+  "source": "Catálogo Dermaclar 2026 facilitado en Util",
   "products": [
     {
-      "id": "aclarante-serum",
-      "name": "Sérum Aclarante Dermaclar",
-      "category": "Antimanchas",
-      "description": "Sérum facial para complementar una rutina de cuidado enfocada en tono desigual.",
-      "price": 18.5,
-      "image": "assets/product-aclarante.svg",
-      "imageAlt": "Frasco de producto para el cuidado facial"
+      "id": "exoface-30ml",
+      "name": "ExoFace",
+      "category": "Tratamiento facial",
+      "description": "Terapia exosomal bioestimulante y reafirmante. El catálogo describe una fórmula con exosomas, péptidos y niacinamida.",
+      "size": "Gotero de 30 ml",
+      "price": 74,
+      "image": "assets/catalog-exoface.jpg",
+      "imageAlt": "Fotografía de ExoFace en el catálogo Dermaclar, frasco con gotero rosado"
     },
     {
-      "id": "control-gel-limpiador",
-      "name": "Gel Limpiador Control Dermaclar",
-      "category": "Piel grasa",
-      "description": "Limpiador facial para piel grasa y con tendencia acneica.",
-      "price": 12.75,
-      "image": "assets/product-control.svg",
-      "imageAlt": "Producto cosmético para limpieza facial"
+      "id": "exolumine-30ml",
+      "name": "ExoLumine",
+      "category": "Tratamiento facial",
+      "description": "Sérum con exosomas despigmentantes y antioxidantes, según la descripción del catálogo.",
+      "size": "Gotero de 30 ml",
+      "price": 58,
+      "image": "assets/catalog-exolumine.jpg",
+      "imageAlt": "Fotografía de ExoLumine en el catálogo Dermaclar, frasco con gotero amarillo"
     },
     {
-      "id": "hidra-crema-facial",
-      "name": "Crema Facial Hidra Dermaclar",
+      "id": "exoblemish-30ml",
+      "name": "ExoBlemish",
+      "category": "Tratamiento facial",
+      "description": "Sérum bioactivo para el cuidado de piel con tendencia grasa; la marca describe una fórmula calmante y regeneradora.",
+      "size": "Gotero de 30 ml",
+      "price": 58,
+      "image": "assets/catalog-exoblemish.jpg",
+      "imageAlt": "Fotografía de ExoBlemish en el catálogo Dermaclar, frasco con gotero verde"
+    },
+    {
+      "id": "exohair-30ml",
+      "name": "ExoHair",
+      "category": "Cuidado capilar",
+      "description": "Sérum capilar con exosomas e ingredientes para el cuidado del cuero cabelludo y el cabello.",
+      "size": "Gotero de 30 ml",
+      "price": 56,
+      "image": "assets/catalog-exohair.jpg",
+      "imageAlt": "Fotografía de ExoHair en el catálogo Dermaclar, frasco con gotero rosado"
+    },
+    {
+      "id": "derm-face-serum-30ml",
+      "name": "Derm face serum",
       "category": "Hidratación",
-      "description": "Crema hidratante para acompañar el cuidado diario de la barrera cutánea.",
-      "price": 16.25,
-      "image": "assets/product-hidra.svg",
-      "imageAlt": "Envase de crema para el cuidado de la piel"
+      "description": "Gel facial con ácido hialurónico, péptidos y extractos. El catálogo indica una fórmula apta para pieles sensibles.",
+      "size": "Frasco de 30 ml",
+      "price": 41,
+      "image": "assets/catalog-derm-face-serum.jpg",
+      "imageAlt": "Fotografía del Derm face serum y su caja en el catálogo Dermaclar"
     },
     {
-      "id": "solar-protector-facial",
-      "name": "Protector Solar Facial Dermaclar",
+      "id": "aqua-piel-3ah-50ml",
+      "name": "Aqua piel 3AH",
+      "category": "Hidratación",
+      "description": "Sérum de agua y nutrientes con liposomas y ácido hialurónico reticulado, según la descripción del catálogo.",
+      "size": "Frasco de 50 ml",
+      "price": 42,
+      "image": "assets/catalog-aqua-piel-3ah.jpg",
+      "imageAlt": "Fotografía del frasco y la caja de Aqua piel 3AH en el catálogo Dermaclar"
+    },
+    {
+      "id": "dd-cream-50gr",
+      "name": "Protector solar DD Cream con color",
       "category": "Protección solar",
-      "description": "Protector facial para integrar en una rutina de cuidado durante el día.",
-      "price": 20,
-      "image": "assets/product-solar.svg",
-      "imageAlt": "Productos de cuidado facial sobre una superficie clara"
+      "description": "Crema facial con color y SPF 30. El catálogo la describe como protección y cobertura de tono.",
+      "size": "Frasco de 50 g",
+      "price": 48,
+      "image": "assets/catalog-dd-cream.jpg",
+      "imageAlt": "Fotografía del protector solar DD Cream con color en el catálogo Dermaclar"
     },
     {
-      "id": "gentle-crema-calmante",
-      "name": "Crema Calmante Gentle Dermaclar",
-      "category": "Piel sensible",
-      "description": "Crema facial para una rutina de cuidado suave en pieles sensibles.",
-      "price": 17.4,
-      "image": "assets/product-gentle.svg",
-      "imageAlt": "Envase de producto para cuidado facial suave"
+      "id": "contorno-ojos-15ml",
+      "name": "Contorno de ojos",
+      "category": "Cuidado facial",
+      "description": "Sérum para el contorno de ojos con aplicador metálico; la descripción y presentación proceden del catálogo.",
+      "size": "Frasco de 15 ml",
+      "price": 48,
+      "image": "assets/catalog-contorno-ojos.jpg",
+      "imageAlt": "Fotografía del producto de contorno de ojos y su aplicador en el catálogo Dermaclar"
+    },
+    {
+      "id": "xtreme-hialuronic-5x2ml",
+      "name": "Xtreme Sérum Hialuronic",
+      "category": "Hidratación",
+      "description": "Sérum en ampollas con ácido hialurónico, tripéptido, escualeno vegetal y nanosomas de ceramidas, según el catálogo.",
+      "size": "Caja de 5 ampollas de 2 ml",
+      "price": 34,
+      "image": "assets/catalog-xtreme-hialuronic.jpg",
+      "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum Hialuronic en el catálogo Dermaclar"
+    },
+    {
+      "id": "xtreme-argireline-5x2ml",
+      "name": "Xtreme Sérum Argireline",
+      "category": "Cuidado facial",
+      "description": "Sérum en ampollas con péptidos biomiméticos Argireline y Leuphasyl, de acuerdo con el catálogo.",
+      "size": "Caja de 5 ampollas de 2 ml",
+      "price": 34,
+      "image": "assets/catalog-xtreme-argireline.jpg",
+      "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum Argireline en el catálogo Dermaclar"
+    },
+    {
+      "id": "xtreme-dmae-5x2ml",
+      "name": "Xtreme Sérum DMAE",
+      "category": "Cuidado facial",
+      "description": "Sérum en ampollas con DMAE y film tensor biológico, según la descripción del catálogo.",
+      "size": "Caja de 5 ampollas de 2 ml",
+      "price": 34,
+      "image": "assets/catalog-xtreme-dmae.jpg",
+      "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum DMAE en el catálogo Dermaclar"
+    },
+    {
+      "id": "proteoglycans-c-5x2ml",
+      "name": "Serum Proteoglycans-C",
+      "category": "Cuidado facial",
+      "description": "Sérum en ampollas descrito en el catálogo dentro de la línea de uso en casa.",
+      "size": "Caja de 5 ampollas de 2 ml",
+      "price": 34,
+      "image": "assets/catalog-proteoglycans-c.jpg",
+      "imageAlt": "Fotografía de la caja y ampolla Serum Proteoglycans-C en el catálogo Dermaclar"
+    },
+    {
+      "id": "long-lash-3ml",
+      "name": "Long lash",
+      "category": "Cuidado de pestañas",
+      "description": "Sérum acondicionador para pestañas y cejas. La información del producto procede del catálogo.",
+      "size": "Frasco de 3 ml",
+      "price": 27,
+      "image": "assets/catalog-long-lash.jpg",
+      "imageAlt": "Fotografía del sérum Long lash y su caja en el catálogo Dermaclar"
+    },
+    {
+      "id": "lipstick-hialuronico-4g",
+      "name": "Lipstick con Ácido Hialurónico",
+      "category": "Cuidado de labios",
+      "description": "Barra labial con ácido hialurónico. El catálogo presenta tonos menta, mora azul y sandía.",
+      "size": "Frasco de 4 g",
+      "price": 23,
+      "image": "assets/catalog-lipstick-hialuronico.jpg",
+      "imageAlt": "Fotografía de las tres presentaciones del lipstick con ácido hialurónico en el catálogo Dermaclar"
+    },
+    {
+      "id": "hyaluronic-lipgloss-48ml",
+      "name": "Hyaluronic LipGloss",
+      "category": "Cuidado de labios",
+      "description": "Brillo labial con ácido hialurónico; nombre, descripción y presentación según el catálogo.",
+      "size": "Frasco de 4,8 g",
+      "price": 21,
+      "image": "assets/catalog-hyaluronic-lipgloss.jpg",
+      "imageAlt": "Fotografía del envase de Hyaluronic LipGloss en el catálogo Dermaclar"
     }
   ]
 }

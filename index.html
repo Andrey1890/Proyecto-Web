@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dermakor | Distribuidora de productos Dermaclar</title>
-  <meta name="description" content="Boceto de Dermakor, distribuidora de productos Dermaclar para consumidores y profesionales.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Catálogo de consulta y carrito de productos Dermaclar de Dermakor. Solicita una cotización directamente al distribuidor.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%231b6e73' d='M24 2C12 8 8 20 8 32a16 16 0 0 0 32 0c0-12-4-24-16-30z'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="assets/styles.css">
   <script src="js/script.js" defer></script>
@@ -74,18 +71,14 @@
         </div>
         <figure class="hero-visual">
           <div class="card-skin">
-            <img class="hero-image" src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1000&q=85" alt="Productos de cuidado facial sobre una superficie clara" width="1000" height="1150" loading="eager">
-            <div class="tube">
-              <div class="tube-cap"></div>
-              <div class="tube-body"><span>Dermaclar</span><small>Línea facial</small></div>
-            </div>
+            <img class="hero-image" src="assets/catalog-exoface.jpg" alt="Fotografía de ExoFace en el catálogo Dermaclar" width="357" height="245" loading="eager">
             <div class="float-chip chip-top">
               <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              Información de producto
+              Catálogo referencial
             </div>
             <div class="float-chip chip-bottom">
               <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z"/></svg>
-              Línea Dermaclar
+              Confirma disponibilidad
             </div>
           </div>
           <figcaption class="visually-hidden">Imagen de referencia para el catálogo Dermakor.</figcaption>
@@ -99,7 +92,7 @@
         <span>Sobre: <strong>Dermaclar<span class="dot">.</span></strong></span>
         <span>Tipo: <strong>Dermocosmética</strong></span>
         <span>Canal: <strong>Mayoreo &amp; Retail</strong></span>
-        <span>Cobertura: <strong>Nacional</strong></span>
+        <span>Atención: <strong>Consulta al distribuidor</strong></span>
       </div>
     </div>
 
@@ -123,12 +116,12 @@
         <div class="about-copy">
           <span class="eyebrow">¿Quiénes somos?</span>
           <h2>La distribuidora que acerca Dermaclar a tu negocio</h2>
-          <p>Dermakor presenta una propuesta de distribución alrededor de la línea <strong>Dermaclar</strong>: productos para manchas, piel grasa, hidratación facial, protección solar y piel sensible.</p>
+          <p>Dermakor comparte información de productos de la línea <strong>Dermaclar</strong> para facilitar consultas sobre presentaciones, precio de referencia y condiciones de compra.</p>
           <ul class="check-list">
             <li>Catálogo organizado por necesidades de la piel.</li>
-            <li>Opciones de atención para consumidor y profesional.</li>
-            <li>Precios, cobertura y disponibilidad se consultan antes de comprar.</li>
-            <li>Información de producto para elegir cada línea.</li>
+            <li>Consulta el nombre, la presentación y el precio PVP publicado en el catálogo.</li>
+            <li>Confirma directamente con el distribuidor la disponibilidad y las condiciones vigentes.</li>
+            <li>Las fotografías muestran los productos tal como aparecen en el catálogo proporcionado.</li>
           </ul>
           <a href="#contacto" class="btn btn-outline">Conocer más</a>
         </div>
@@ -141,14 +134,18 @@
         <div class="section-head">
           <span class="eyebrow">Línea de productos</span>
           <h2>Catálogo Dermaclar</h2>
-          <p>Imágenes y precios referenciales en USD. Confirma disponibilidad y precio final antes de comprar.</p>
+          <p>Precios PVP en USD según el catálogo Dermaclar proporcionado. Las fotografías se recortaron de ese catálogo; confirma disponibilidad y condiciones directamente con el distribuidor.</p>
         </div>
 
         <div class="catalog-tools">
-          <label for="category-filter">Filtrar por categoría</label>
-          <select id="category-filter" name="categoria">
-            <option value="all">Todas las categorías</option>
-          </select>
+          <label for="product-search">Buscar en el catálogo
+            <input id="product-search" type="search" placeholder="Nombre, categoría o presentación">
+          </label>
+          <label for="category-filter">Filtrar por categoría
+            <select id="category-filter" name="categoria">
+              <option value="all">Todas las categorías</option>
+            </select>
+          </label>
         </div>
         <p class="catalog-status" id="catalog-status" role="status" aria-live="polite">Cargando catálogo...</p>
         <p class="catalog-meta">Actualización del catálogo: <time id="catalog-updated">Pendiente</time></p>
@@ -156,12 +153,145 @@
       </div>
     </section>
 
+    <script type="application/json" id="catalog-fallback">
+      {
+        "currency": "USD",
+        "updatedAt": "2026-10-05T23:40:21-05:00",
+        "source": "Catálogo Dermaclar 2026 facilitado en Util",
+        "products": [
+          {
+            "id": "exoface-30ml",
+            "name": "ExoFace", "category": "Tratamiento facial",
+            "description": "Terapia exosomal bioestimulante y reafirmante. El catálogo describe una fórmula con exosomas, péptidos y niacinamida.",
+            "size": "Gotero de 30 ml",
+            "price": 74,
+            "image": "assets/catalog-exoface.jpg",
+            "imageAlt": "Fotografía de ExoFace en el catálogo Dermaclar, frasco con gotero rosado"
+          },
+          {
+            "id": "exolumine-30ml",
+            "name": "ExoLumine", "category": "Tratamiento facial",
+            "description": "Sérum con exosomas despigmentantes y antioxidantes, según la descripción del catálogo.",
+            "size": "Gotero de 30 ml", "price": 58,
+            "image": "assets/catalog-exolumine.jpg",
+            "imageAlt": "Fotografía de ExoLumine en el catálogo Dermaclar, frasco con gotero amarillo"
+          },
+          {
+            "id": "exoblemish-30ml",
+            "name": "ExoBlemish", "category": "Tratamiento facial",
+            "description": "Sérum bioactivo para el cuidado de piel con tendencia grasa; la marca describe una fórmula calmante y regeneradora.",
+            "size": "Gotero de 30 ml", "price": 58,
+            "image": "assets/catalog-exoblemish.jpg",
+            "imageAlt": "Fotografía de ExoBlemish en el catálogo Dermaclar, frasco con gotero verde"
+          },
+          {
+            "id": "exohair-30ml",
+            "name": "ExoHair", "category": "Cuidado capilar",
+            "description": "Sérum capilar con exosomas e ingredientes para el cuidado del cuero cabelludo y el cabello.",
+            "size": "Gotero de 30 ml", "price": 56,
+            "image": "assets/catalog-exohair.jpg",
+            "imageAlt": "Fotografía de ExoHair en el catálogo Dermaclar, frasco con gotero rosado"
+          },
+          {
+            "id": "derm-face-serum-30ml",
+            "name": "Derm face serum", "category": "Hidratación",
+            "description": "Gel facial con ácido hialurónico, péptidos y extractos. El catálogo indica una fórmula apta para pieles sensibles.",
+            "size": "Frasco de 30 ml", "price": 41,
+            "image": "assets/catalog-derm-face-serum.jpg",
+            "imageAlt": "Fotografía del Derm face serum y su caja en el catálogo Dermaclar"
+          },
+          {
+            "id": "aqua-piel-3ah-50ml",
+            "name": "Aqua piel 3AH", "category": "Hidratación",
+            "description": "Sérum de agua y nutrientes con liposomas y ácido hialurónico reticulado, según la descripción del catálogo.",
+            "size": "Frasco de 50 ml",
+            "price": 42,
+            "image": "assets/catalog-aqua-piel-3ah.jpg",
+            "imageAlt": "Fotografía del frasco y la caja de Aqua piel 3AH en el catálogo Dermaclar"
+          },
+          {
+            "id": "dd-cream-50gr",
+            "name": "Protector solar DD Cream con color", "category": "Protección solar",
+            "description": "Crema facial con color y SPF 30. El catálogo la describe como protección y cobertura de tono.",
+            "size": "Frasco de 50 g", "price": 48,
+            "image": "assets/catalog-dd-cream.jpg",
+            "imageAlt": "Fotografía del protector solar DD Cream con color en el catálogo Dermaclar"
+          },
+          {
+            "id": "contorno-ojos-15ml",
+            "name": "Contorno de ojos", "category": "Cuidado facial",
+            "description": "Sérum para el contorno de ojos con aplicador metálico; la descripción y presentación proceden del catálogo.",
+            "size": "Frasco de 15 ml", "price": 48,
+            "image": "assets/catalog-contorno-ojos.jpg",
+            "imageAlt": "Fotografía del producto de contorno de ojos y su aplicador en el catálogo Dermaclar"
+          },
+          {
+            "id": "xtreme-hialuronic-5x2ml",
+            "name": "Xtreme Sérum Hialuronic", "category": "Hidratación",
+            "description": "Sérum en ampollas con ácido hialurónico, tripéptido, escualeno vegetal y nanosomas de ceramidas, según el catálogo.",
+            "size": "Caja de 5 ampollas de 2 ml", "price": 34,
+            "image": "assets/catalog-xtreme-hialuronic.jpg",
+            "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum Hialuronic en el catálogo Dermaclar"
+          },
+          {
+            "id": "xtreme-argireline-5x2ml",
+            "name": "Xtreme Sérum Argireline", "category": "Cuidado facial",
+            "description": "Sérum en ampollas con péptidos biomiméticos Argireline y Leuphasyl, de acuerdo con el catálogo.",
+            "size": "Caja de 5 ampollas de 2 ml", "price": 34,
+            "image": "assets/catalog-xtreme-argireline.jpg",
+            "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum Argireline en el catálogo Dermaclar"
+          },
+          {
+            "id": "xtreme-dmae-5x2ml",
+            "name": "Xtreme Sérum DMAE", "category": "Cuidado facial",
+            "description": "Sérum en ampollas con DMAE y film tensor biológico, según la descripción del catálogo.",
+            "size": "Caja de 5 ampollas de 2 ml", "price": 34,
+            "image": "assets/catalog-xtreme-dmae.jpg",
+            "imageAlt": "Fotografía de la caja y ampolla Xtreme Sérum DMAE en el catálogo Dermaclar"
+          },
+          {
+            "id": "proteoglycans-c-5x2ml",
+            "name": "Serum Proteoglycans-C", "category": "Cuidado facial",
+            "description": "Sérum en ampollas descrito en el catálogo dentro de la línea de uso en casa.",
+            "size": "Caja de 5 ampollas de 2 ml", "price": 34,
+            "image": "assets/catalog-proteoglycans-c.jpg",
+            "imageAlt": "Fotografía de la caja y ampolla Serum Proteoglycans-C en el catálogo Dermaclar"
+          },
+          {
+            "id": "long-lash-3ml",
+            "name": "Long lash", "category": "Cuidado de pestañas",
+            "description": "Sérum acondicionador para pestañas y cejas. La información del producto procede del catálogo.",
+            "size": "Frasco de 3 ml", "price": 27,
+            "image": "assets/catalog-long-lash.jpg",
+            "imageAlt": "Fotografía del sérum Long lash y su caja en el catálogo Dermaclar"
+          },
+          {
+            "id": "lipstick-hialuronico-4g",
+            "name": "Lipstick con Ácido Hialurónico", "category": "Cuidado de labios",
+            "description": "Barra labial con ácido hialurónico. El catálogo presenta tonos menta, mora azul y sandía.",
+            "size": "Frasco de 4 g", "price": 23,
+            "image": "assets/catalog-lipstick-hialuronico.jpg",
+            "imageAlt": "Fotografía de las tres presentaciones del lipstick con ácido hialurónico en el catálogo Dermaclar"
+          },
+          {
+            "id": "hyaluronic-lipgloss-48ml",
+            "name": "Hyaluronic LipGloss", "category": "Cuidado de labios",
+            "description": "Brillo labial con ácido hialurónico; nombre, descripción y presentación según el catálogo.",
+            "size": "Frasco de 4,8 g", "price": 21,
+            "image": "assets/catalog-hyaluronic-lipgloss.jpg",
+            "imageAlt": "Fotografía del envase de Hyaluronic LipGloss en el catálogo Dermaclar"
+          }
+        ]
+      }
+    </script>
+
     <template id="product-card-template">
       <article class="product-card">
         <img class="product-image" alt="" width="640" height="480" loading="lazy">
         <div class="product-body">
           <span class="tag"></span>
           <h3></h3>
+          <p class="product-size"></p>
           <p class="product-description"></p>
           <p class="product-price"></p>
           <button class="btn btn-primary product-add" type="button">Agregar al carrito</button>
@@ -189,15 +319,167 @@
         <button class="icon-button" id="cart-close" type="button" aria-label="Cerrar carrito">&times;</button>
       </div>
       <p class="visually-hidden" id="cart-status" role="status" aria-live="polite"></p>
-      <p class="cart-empty" id="cart-empty">Aún no has agregado productos.</p>
-      <ul class="cart-items" id="cart-items"></ul>
-      <div class="cart-summary">
-        <p><span>Subtotal</span><output id="cart-subtotal">$0,00</output></p>
-        <p class="cart-total"><span>Total</span><output id="cart-total">$0,00</output></p>
-        <p class="cart-shipping-note">El envío y los impuestos, si aplican, se confirman antes de la compra.</p>
-        <p class="cart-updated">Última actualización: <time id="cart-updated">Sin cambios</time></p>
-        <button class="btn btn-outline cart-clear" id="cart-clear" type="button">Vaciar carrito</button>
+      <div id="cart-view">
+        <p class="cart-empty" id="cart-empty">Aún no has agregado productos.</p>
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-summary">
+          <p><span>Subtotal productos</span><output id="cart-subtotal">$0,00</output></p>
+          <p class="cart-shipping-note">Envío e impuestos: por confirmar con el distribuidor.</p>
+          <p class="cart-total"><span>Total provisional</span><output id="cart-total">$0,00</output></p>
+          <p class="cart-quote-note">El total no incluye envío ni impuestos y no confirma disponibilidad ni una compra.</p>
+          <p class="cart-updated">Última actualización: <time id="cart-updated">Sin cambios</time></p>
+          <button class="btn btn-primary cart-checkout" id="checkout-open" type="button">Continuar a datos de envío</button>
+          <a class="btn btn-outline cart-quote" id="cart-quote" href="https://wa.me/593996096996" target="_blank" rel="noopener noreferrer">Consultar el carrito por WhatsApp</a>
+          <p class="cart-quote-note">La consulta solo se prepara; debes revisar y enviar el mensaje desde WhatsApp.</p>
+          <button class="btn btn-outline cart-clear" id="cart-clear" type="button">Vaciar carrito</button>
+        </div>
       </div>
+
+      <section class="checkout-view" id="checkout-view" aria-labelledby="checkout-title" hidden>
+        <a class="checkout-back" href="#cart" id="checkout-back">← Volver al carrito</a>
+        <ol class="checkout-progress" aria-label="Pasos de la solicitud">
+          <li data-checkout-indicator="shipping" aria-current="step">1. Datos de envío</li>
+          <li data-checkout-indicator="payment">2. Pago</li>
+          <li data-checkout-indicator="confirmation">3. Confirmación</li>
+        </ol>
+
+        <div class="checkout-columns">
+          <div class="checkout-main">
+            <div class="checkout-step" id="checkout-step-shipping">
+              <h3 id="checkout-title" tabindex="-1">Completa tu solicitud</h3>
+              <p>Indica cómo contactarte y dónde consultar la entrega. El costo de envío aún no está calculado.</p>
+              <div class="checkout-notice notice-error" id="shipping-error" role="alert" hidden></div>
+              <form id="shipping-form" novalidate>
+                <fieldset>
+                  <legend>1. Contacto</legend>
+                  <label for="shipping-email">Correo electrónico *</label>
+                  <input id="shipping-email" name="email" type="email" autocomplete="email" required aria-invalid="false" aria-describedby="shipping-email-error">
+                  <span class="field-error" id="shipping-email-error"></span>
+                  <div class="field-row checkout-field-row">
+                    <div>
+                      <label for="shipping-first-name">Nombre *</label>
+                      <input id="shipping-first-name" name="nombre" autocomplete="given-name" required aria-invalid="false" aria-describedby="shipping-first-name-error">
+                      <span class="field-error" id="shipping-first-name-error"></span>
+                    </div>
+                    <div>
+                      <label for="shipping-last-name">Apellidos *</label>
+                      <input id="shipping-last-name" name="apellidos" autocomplete="family-name" required aria-invalid="false" aria-describedby="shipping-last-name-error">
+                      <span class="field-error" id="shipping-last-name-error"></span>
+                    </div>
+                  </div>
+                  <label for="shipping-phone">Teléfono / WhatsApp *</label>
+                  <input id="shipping-phone" name="telefono" type="tel" autocomplete="tel" required aria-invalid="false" aria-describedby="shipping-phone-error">
+                  <span class="field-error" id="shipping-phone-error"></span>
+                </fieldset>
+                <fieldset>
+                  <legend>2. Dirección de envío</legend>
+                  <label for="shipping-province">Provincia *</label>
+                  <input id="shipping-province" name="provincia" autocomplete="address-level1" required aria-invalid="false" aria-describedby="shipping-province-error">
+                  <span class="field-error" id="shipping-province-error"></span>
+                  <div class="field-row checkout-field-row">
+                    <div>
+                      <label for="shipping-city">Ciudad *</label>
+                      <input id="shipping-city" name="ciudad" autocomplete="address-level2" required aria-invalid="false" aria-describedby="shipping-city-error">
+                      <span class="field-error" id="shipping-city-error"></span>
+                    </div>
+                    <div>
+                      <label for="shipping-postal">Código postal</label>
+                      <input id="shipping-postal" name="codigoPostal" autocomplete="postal-code" aria-invalid="false" aria-describedby="shipping-postal-error">
+                      <span class="field-error" id="shipping-postal-error"></span>
+                    </div>
+                  </div>
+                  <label for="shipping-street">Calle y número *</label>
+                  <input id="shipping-street" name="calle" autocomplete="street-address" required aria-invalid="false" aria-describedby="shipping-street-error">
+                  <span class="field-error" id="shipping-street-error"></span>
+                  <label for="shipping-reference">Referencia (opcional)</label>
+                  <input id="shipping-reference" name="referencia" aria-invalid="false" aria-describedby="shipping-reference-error">
+                  <span class="field-error" id="shipping-reference-error"></span>
+                </fieldset>
+                <div class="shipping-note">
+                  <strong>Envío: por calcular</strong>
+                  <p>El distribuidor confirmará cobertura, opciones y costo cuando revise la dirección.</p>
+                </div>
+                <button class="btn btn-primary checkout-action" type="submit">Continuar al pago</button>
+              </form>
+            </div>
+
+            <div class="checkout-step" id="checkout-step-payment" hidden>
+              <button class="checkout-back" id="payment-back" type="button">← Volver a datos de envío</button>
+              <h3 id="payment-title" tabindex="-1">Pago</h3>
+              <p>Revisa la solicitud. Esta web de demostración no tiene pasarela de pago.</p>
+              <div class="checkout-notice notice-warning" role="note">
+                <strong>Prototipo educativo: no ingreses datos reales de tarjeta.</strong>
+                <span>Ningún dato de pago se transmite ni se guarda, y no se realizará ningún cobro. Coordina el pago directamente con el distribuidor.</span>
+              </div>
+              <form id="payment-form" novalidate>
+                <fieldset>
+                  <legend>Método de pago</legend>
+                  <label class="payment-option">
+                    <input type="radio" name="metodoPago" value="coordinar" checked>
+                    <span><strong>Coordinar con el distribuidor</strong><small>La forma de pago se confirma al solicitar la cotización.</small></span>
+                  </label>
+                  <div class="payment-demo-fields" id="payment-demo-fields">
+                    <p>Campos ilustrativos de la referencia visual. Déjalos vacíos; no se necesitan para esta solicitud.</p>
+                    <label for="demo-card-name">Titular de la tarjeta</label>
+                    <input id="demo-card-name" name="demoTitular" autocomplete="off" aria-describedby="demo-card-note">
+                    <label for="demo-card-number">Número de tarjeta</label>
+                    <input id="demo-card-number" name="demoNumero" inputmode="numeric" autocomplete="off" aria-describedby="demo-card-note" maxlength="23">
+                    <div class="field-row checkout-field-row">
+                      <div>
+                        <label for="demo-card-expiry">Fecha de caducidad</label>
+                        <input id="demo-card-expiry" name="demoCaducidad" placeholder="MM/AA" autocomplete="off" aria-describedby="demo-card-note" maxlength="5">
+                      </div>
+                      <div>
+                        <label for="demo-card-cvv">Código de seguridad</label>
+                        <input id="demo-card-cvv" name="demoCvv" inputmode="numeric" autocomplete="off" aria-describedby="demo-card-note" maxlength="4">
+                      </div>
+                    </div>
+                    <span class="checkout-privacy-note" id="demo-card-note">No escribas datos reales. Estos campos solo reproducen el diseño de la referencia y no participan en el flujo.</span>
+                  </div>
+                </fieldset>
+                <div class="checkout-notice notice-info" id="payment-address-summary"></div>
+                <button class="btn btn-primary checkout-action" type="submit">Revisar solicitud</button>
+              </form>
+            </div>
+
+            <div class="checkout-step" id="checkout-step-confirmation" hidden>
+              <h3 id="confirmation-title" tabindex="-1">Revisión antes de solicitar</h3>
+              <p>Comprueba los productos y los datos antes de abrir WhatsApp.</p>
+              <div class="review-panel">
+                <h4>Productos</h4>
+                <ul id="review-products"></ul>
+                <h4>Datos de contacto y entrega</h4>
+                <p id="review-address"></p>
+                <a class="checkout-back" href="#shipping" id="review-edit-address">Editar datos de envío</a>
+                <h4>Pago</h4>
+                <p>Por coordinar con el distribuidor. No se ingresaron ni procesaron datos de tarjeta.</p>
+                <div class="shipping-note">
+                  <strong>Envío: por confirmar</strong>
+                  <p>El costo no está incluido hasta que el distribuidor lo cotice.</p>
+                </div>
+                <p class="review-total">Subtotal de productos <output id="review-subtotal">$0,00</output></p>
+                <p class="review-total">Total provisional <output id="review-total">$0,00</output></p>
+                <p class="checkout-privacy-note">No es una compra confirmada. Al abrir WhatsApp se preparará un mensaje con los productos y los datos de contacto y entrega que ingresaste; tú decides si lo envías. Los datos de tarjeta no se incluyen.</p>
+              </div>
+              <div class="checkout-actions">
+                <button class="btn btn-outline" id="review-back" type="button">Volver al pago</button>
+                <a class="btn btn-primary checkout-action" id="checkout-whatsapp" href="https://wa.me/593996096996" target="_blank" rel="noopener noreferrer">Solicitar cotización por WhatsApp</a>
+              </div>
+              <p class="form-status" id="checkout-status" role="status" aria-live="polite"></p>
+            </div>
+          </div>
+
+          <aside class="checkout-aside" aria-label="Resumen de productos">
+            <h4>Resumen · <span id="checkout-item-count">0 artículos</span></h4>
+            <ul class="checkout-summary-items" id="checkout-summary-items"></ul>
+            <p><span>Subtotal productos</span><output id="checkout-subtotal">$0,00</output></p>
+            <p><span>Envío</span><span>Por confirmar</span></p>
+            <p class="review-total"><strong>Total provisional</strong><output id="checkout-total">$0,00</output></p>
+            <a href="#cart" id="checkout-edit-cart">Editar carrito</a>
+            <p class="checkout-privacy-note">Sin envío ni impuestos; importe final por confirmar.</p>
+          </aside>
+        </div>
+      </section>
     </dialog>
 
     <!-- BENEFICIOS -->
@@ -205,8 +487,8 @@
       <div class="container">
         <div class="section-head">
           <span class="eyebrow">Por qué Dermakor</span>
-          <h2>Compra con seguridad, vende con respaldo</h2>
-          <p>Todo lo que necesitas de un socio comercial confiable.</p>
+          <h2>Información clara para consultar</h2>
+          <p>Revisa los datos publicados y confirma los detalles con el distribuidor.</p>
         </div>
 
         <div class="benefit-grid">
@@ -221,8 +503,8 @@
             <span class="benefit-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 3v2h7v8h-2V7h-5v2l-4-4 4-4v2zm7 12v3H8a2 2 0 0 1-2-2V8h2v10h9v-3l4 4z"/></svg>
             </span>
-            <h3>Opciones de entrega</h3>
-            <p>Consulta las alternativas de entrega para tu ciudad o negocio.</p>
+            <h3>Condiciones de entrega</h3>
+            <p>El distribuidor confirma opciones y costos según tu ubicación.</p>
           </div>
           <div class="benefit">
             <span class="benefit-icon" aria-hidden="true">
@@ -271,20 +553,20 @@
       <div class="container contact-grid">
         <div class="contact-info">
           <span class="eyebrow">Contacto</span>
-          <h2>¿Listo para vender Dermaclar?</h2>
-          <p>Escríbenos para consultar catálogo, cobertura, precios y talleres disponibles.</p>
+          <h2>¿Tienes una consulta?</h2>
+          <p>Contacta al distribuidor para verificar disponibilidad, precios vigentes y condiciones de compra.</p>
           <ul class="contact-list">
             <li>
               <span class="c-icon" aria-hidden="true">&#9993;</span>
-              <div><strong>Consultas comerciales</strong><small>Catálogo, precios y pedidos</small></div>
+              <div><strong>Distribuidor en Quito</strong><small>Dirección: Atahualpa E1-136 y Av. República, edificio La Casa del Futbolista, primer piso, oficina 3</small></div>
             </li>
             <li>
               <span class="c-icon" aria-hidden="true">&#9742;</span>
-              <div><strong>Atención para negocios</strong><small>Compras profesionales y retail</small></div>
+              <div><strong>Teléfono y WhatsApp</strong><small><a href="tel:+593996096996">099 609 6996</a></small></div>
             </li>
             <li>
               <span class="c-icon" aria-hidden="true">&#9200;</span>
-              <div><strong>Información de entrega</strong><small>Cobertura y disponibilidad</small></div>
+              <div><strong>Redes sociales</strong><small><a href="https://www.instagram.com/dermclarquitoecuador/" target="_blank" rel="noopener noreferrer">@dermclarquitoecuador</a> · <a href="https://www.instagram.com/elizabethmerinoecuador/" target="_blank" rel="noopener noreferrer">@elizabethmerinoecuador</a></small></div>
             </li>
           </ul>
         </div>
@@ -292,27 +574,22 @@
           <h3>Solicitar catálogo y precios</h3>
           <div class="field-row">
             <label>Nombre<input id="contact-name" type="text" name="nombre" autocomplete="name" aria-invalid="false" aria-describedby="contact-name-error" placeholder="Tu nombre" required><span class="field-error" id="contact-name-error"></span></label>
-            <label>Empresa<input id="contact-company" type="text" name="empresa" autocomplete="organization" aria-invalid="false" aria-describedby="contact-company-error" placeholder="Nombre de tu negocio" required><span class="field-error" id="contact-company-error"></span></label>
+            <label>Empresa (opcional)<input id="contact-company" type="text" name="empresa" autocomplete="organization" aria-invalid="false" aria-describedby="contact-company-error" placeholder="Nombre de tu negocio"><span class="field-error" id="contact-company-error"></span></label>
           </div>
           <div class="field-row">
             <label>Correo<input id="contact-email" type="email" name="correo" autocomplete="email" aria-invalid="false" aria-describedby="contact-email-error" placeholder="correo@ejemplo.com" required><span class="field-error" id="contact-email-error"></span></label>
             <label>Teléfono / WhatsApp<input id="contact-phone" type="tel" name="telefono" autocomplete="tel" aria-invalid="false" aria-describedby="contact-phone-error" placeholder="+00 000 000 0000"><span class="field-error" id="contact-phone-error"></span></label>
           </div>
-          <label>¿Qué línea te interesa?
-            <select name="linea">
-              <option value="todas">Catálogo completo</option>
-              <option value="aclarante">Línea Aclarante</option>
-              <option value="control">Línea Control</option>
-              <option value="hidra">Línea Hidra</option>
-              <option value="solar">Línea Solar</option>
-              <option value="gentle">Línea Gentle</option>
+          <label for="contact-line">¿Qué producto te interesa?
+            <select id="contact-line" name="producto">
+              <option value="Catálogo completo">Catálogo completo</option>
             </select>
           </label>
-          <label>Mensaje<textarea name="mensaje" rows="3" placeholder="Cuéntanos tu volumen estimado de compra..."></textarea></label>
-          <button class="btn btn-primary" type="submit">Enviar solicitud</button>
-          <p class="form-note">Completa los campos requeridos para preparar tu consulta comercial.</p>
+          <label for="contact-message">Mensaje<textarea id="contact-message" name="mensaje" rows="3" maxlength="500" placeholder="Escribe tu consulta (opcional)."></textarea></label>
+          <button class="btn btn-primary" type="submit">Preparar consulta en WhatsApp</button>
+          <p class="form-note">Se abrirá WhatsApp con los datos que escribiste para que revises el mensaje antes de enviarlo. No se envía ni se guarda información en esta página.</p>
           <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
-          <a class="whatsapp-link" href="https://wa.me/593999999999">Escribir por WhatsApp (número demostrativo)</a>
+          <a class="whatsapp-link" href="https://wa.me/593996096996" target="_blank" rel="noopener noreferrer">Abrir WhatsApp · 099 609 6996</a>
         </form>
       </div>
     </section>
@@ -328,7 +605,7 @@
             <path fill="#0b2f38" d="M24 10a12 12 0 0 0-6 22.5c1-3.5 2.7-6.2 5-8.2 1.3-1.2 3.4-.9 4.5.3 1 .7 1.9 1.6 2.5 2.7a12 12 0 0 1-6 17.7A16 16 0 0 0 32 32c0-11-3.7-19.4-8-22z" opacity=".9"/>
           </svg>
         </span>
-        <p>Dermakor · Boceto de distribuidora de la línea dermocosmética Dermaclar.</p>
+        <p>Dermakor · Catálogo de consulta de productos Dermaclar. Los precios y la disponibilidad se confirman con el distribuidor.</p>
       </div>
       <nav class="footer-nav" aria-label="Mapa del sitio">
         <strong>Explora</strong>
@@ -339,20 +616,20 @@
       </nav>
       <div class="footer-contact">
         <strong>Contacto</strong>
-        <span>Consultas comerciales</span>
-        <span>Atención para negocios</span>
-        <span>Información de entrega</span>
+        <a href="tel:+593996096996">099 609 6996</a>
+        <span>Quito, Ecuador</span>
+        <a href="https://www.instagram.com/dermclarquitoecuador/" target="_blank" rel="noopener noreferrer">@dermclarquitoecuador</a>
       </div>
       <div class="footer-legal">
-        <strong>Legal</strong>
-        <a href="#">Términos y condiciones</a>
-        <a href="#">Política de privacidad</a>
-        <a href="#">Política de devoluciones</a>
+        <strong>Tu compra</strong>
+        <a href="#productos">Consultar productos</a>
+        <a href="#contacto">Disponibilidad y condiciones</a>
+        <a href="#contacto">Contacto del distribuidor</a>
       </div>
     </div>
     <div class="container footer-base">
-      <span>© 2026 Dermakor. Todos los derechos reservados.</span>
-      <span>Productos Dermaclar · Proyecto visual de demostración</span>
+      <span>Dermakor · Información de consulta</span>
+      <span>Precios de referencia en USD · Cotización y disponibilidad por confirmar</span>
     </div>
   </footer>
 

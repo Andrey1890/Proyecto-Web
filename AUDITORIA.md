@@ -1,15 +1,25 @@
-# Auditoria de la pagina web Dermakor
+# Auditoria del proyecto web Dermakor
 
-**Fecha:** 2026-09-24  
-**Alcance:** `index.html`, `styles.css` y la copia de trabajo en `boceto/`.  
-**Tipo:** revision estatica de funcionalidad, accesibilidad, responsive, rendimiento, contenido y confianza comercial.  
-**Metodo:** lectura del HTML/CSS y busqueda de formularios, enlaces, scripts, reglas responsive y estados de movimiento. No sustituye una prueba con navegador, Lighthouse ni una validacion de backend.
+**Fecha:** 2026-10-05
+**Alcance:** `index.html`, `assets/styles.css`, `js/script.js`, `data/products.json` y recursos de `assets/`.
+**Tipo:** revision funcional, accesibilidad WCAG 2.2 AA, responsive, persistencia, rendimiento y contenido.
+**Metodo:** inspeccion estatica y prueba en navegador con servidor local a 320, 375, 768, 1024 y 1280 px; incluye carrito, recarga, IndexedDB y fallback offline. No sustituye una auditoria completa con Lighthouse/axe ni una prueba de compra con backend.
 
 ## Resumen ejecutivo
 
-La pagina tiene una estructura visual solida y una base semantica razonable. Se corrigieron los textos de relleno, las afirmaciones no verificadas, los testimonios ficticios y la navegacion movil. Todavia queda pendiente conectar el formulario, crear las paginas legales y sustituir el enlace de WhatsApp demostrativo, tareas excluidas de esta correccion. `boceto/` quedo sincronizado con la version principal.
+El proyecto ahora carga el catálogo desde JSON local, presenta tarjetas reutilizables con imágenes locales, importe referencial y acción de carrito, y conserva carrito/filtro mediante localStorage, IndexedDB, sessionStorage y cookie de fecha. El layout probado no desborda desde 320 px y el carrito se actualiza tras recarga. Los importes y las imágenes son ilustrativos, no precios de venta ni empaques oficiales.
 
-Antes de publicar para clientes se debe conectar el contacto a un backend o servicio de formularios, sustituir todos los textos de demostracion por datos verificados y resolver la navegacion movil.
+Antes de habilitar ventas reales se debe conectar pedidos y contacto a un backend, confirmar catálogo/precios, sustituir el número de WhatsApp de demostración y publicar páginas legales reales. Los enlaces legales `href="#"` y el endpoint del formulario continúan sin destino funcional.
+
+## Cambios verificados
+
+- El catálogo se lee de `data/products.json`; IndexedDB mantiene un respaldo si no se puede leer el archivo.
+- Las tarjetas se generan desde una plantilla HTML compartida e incluyen imagen local, descripción, precio referencial y botón de carrito.
+- El carrito permite agregar, eliminar, cambiar cantidades y vaciar; el subtotal y total se calculan en centavos y se conservan con `localStorage`.
+- IndexedDB guarda productos, `sessionStorage` retiene el filtro de categoría y una cookie junto con el carrito registra la última actualización.
+- Los campos de nombre, empresa, correo y teléfono tienen validación regex, `aria-invalid` y mensajes conectados mediante `aria-describedby`.
+- Se comprobaron menú por teclado, persistencia al recargar, fallback offline y ausencia de desbordamiento horizontal a 320, 375, 768, 1024 y 1280 px.
+- Contrastes de texto y controles revisados por código: mínimo observado 5.41:1; aún se recomienda ejecutar axe/Lighthouse antes de producción.
 
 ## Hallazgos
 

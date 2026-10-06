@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath fill='%231b6e73' d='M24 2C12 8 8 20 8 32a16 16 0 0 0 32 0c0-12-4-24-16-30z'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
 
@@ -47,6 +47,9 @@
       </nav>
 
       <a href="#contacto" class="btn btn-primary header-cta">Cotizar ahora</a>
+      <button class="btn cart-trigger" id="cart-open" type="button" aria-haspopup="dialog" aria-controls="cart-dialog">
+        Carrito <span class="cart-count" id="cart-count" aria-label="0 artículos">0</span>
+      </button>
     </div>
   </header>
 
@@ -138,80 +141,64 @@
         <div class="section-head">
           <span class="eyebrow">Línea de productos</span>
           <h2>Catálogo Dermaclar</h2>
-          <p>Selección de líneas presentadas para consulta comercial.</p>
+          <p>Imágenes y precios referenciales en USD. Confirma disponibilidad y precio final antes de comprar.</p>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <div class="swatch swatch-clear">
-              <span class="swatch-icon" aria-hidden="true">&#9745;</span>
-            </div>
-            <div class="product-body">
-              <span class="tag">Antimanchas</span>
-              <h3>Línea Aclarante</h3>
-              <p>Opciones de cuidado orientadas a manchas e hiperpigmentación.</p>
-              <a class="product-link" href="#contacto">Ver presentaciones</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="swatch swatch-mint">
-              <span class="swatch-icon" aria-hidden="true">&#10003;</span>
-            </div>
-            <div class="product-body">
-              <span class="tag">Anti-acné</span>
-              <h3>Línea Control</h3>
-              <p>Rutinas para piel grasa y con tendencia acneica, de uso diario.</p>
-              <a class="product-link" href="#contacto">Ver presentaciones</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="swatch swatch-blue">
-              <span class="swatch-icon" aria-hidden="true">&#9729;</span>
-            </div>
-            <div class="product-body">
-              <span class="tag">Hidratación</span>
-              <h3>Línea Hidra</h3>
-              <p>Hidratación profunda y restauración de la barrera cutánea.</p>
-              <a class="product-link" href="#contacto">Ver presentaciones</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="swatch swatch-sun">
-              <span class="swatch-icon" aria-hidden="true">&#9788;</span>
-            </div>
-            <div class="product-body">
-              <span class="tag">Protección solar</span>
-              <h3>Línea Solar</h3>
-              <p>Opciones de protección solar para incorporar a la rutina diaria.</p>
-              <a class="product-link" href="#contacto">Ver presentaciones</a>
-            </div>
-          </article>
-
-          <article class="product-card">
-            <div class="swatch swatch-cream">
-              <span class="swatch-icon" aria-hidden="true">&#10048;</span>
-            </div>
-            <div class="product-body">
-              <span class="tag">Piel sensible</span>
-              <h3>Línea Gentle</h3>
-              <p>Opciones de cuidado para pieles sensibles y reactivas.</p>
-              <a class="product-link" href="#contacto">Ver presentaciones</a>
-            </div>
-          </article>
-
-          <article class="product-card product-card-cta">
-            <div class="product-body">
-              <h3>¿Buscas otra categoría?</h3>
-              <p>Indica qué producto necesitas y revisaremos la información disponible.</p>
-              <a href="#contacto" class="btn btn-primary">Hacer una consulta</a>
-            </div>
-          </article>
+        <div class="catalog-tools">
+          <label for="category-filter">Filtrar por categoría</label>
+          <select id="category-filter" name="categoria">
+            <option value="all">Todas las categorías</option>
+          </select>
         </div>
+        <p class="catalog-status" id="catalog-status" role="status" aria-live="polite">Cargando catálogo...</p>
+        <p class="catalog-meta">Actualización del catálogo: <time id="catalog-updated">Pendiente</time></p>
+        <div class="product-grid" id="product-grid" aria-busy="true"></div>
       </div>
     </section>
+
+    <template id="product-card-template">
+      <article class="product-card">
+        <img class="product-image" alt="" width="640" height="480" loading="lazy">
+        <div class="product-body">
+          <span class="tag"></span>
+          <h3></h3>
+          <p class="product-description"></p>
+          <p class="product-price"></p>
+          <button class="btn btn-primary product-add" type="button">Agregar al carrito</button>
+        </div>
+      </article>
+    </template>
+
+    <template id="cart-row-template">
+      <li class="cart-item">
+        <img class="cart-item-image" alt="" width="96" height="96">
+        <div class="cart-item-info">
+          <h3></h3>
+          <p class="cart-item-price"></p>
+          <label class="quantity-label">Cantidad
+            <input class="cart-quantity" type="number" min="1" max="99" step="1" inputmode="numeric">
+          </label>
+        </div>
+        <button class="cart-remove" type="button">Eliminar</button>
+      </li>
+    </template>
+
+    <dialog class="cart-dialog" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-head">
+        <h2 id="cart-title">Tu carrito</h2>
+        <button class="icon-button" id="cart-close" type="button" aria-label="Cerrar carrito">&times;</button>
+      </div>
+      <p class="visually-hidden" id="cart-status" role="status" aria-live="polite"></p>
+      <p class="cart-empty" id="cart-empty">Aún no has agregado productos.</p>
+      <ul class="cart-items" id="cart-items"></ul>
+      <div class="cart-summary">
+        <p><span>Subtotal</span><output id="cart-subtotal">$0,00</output></p>
+        <p class="cart-total"><span>Total</span><output id="cart-total">$0,00</output></p>
+        <p class="cart-shipping-note">El envío y los impuestos, si aplican, se confirman antes de la compra.</p>
+        <p class="cart-updated">Última actualización: <time id="cart-updated">Sin cambios</time></p>
+        <button class="btn btn-outline cart-clear" id="cart-clear" type="button">Vaciar carrito</button>
+      </div>
+    </dialog>
 
     <!-- BENEFICIOS -->
     <section class="benefits" id="beneficios">
@@ -301,15 +288,15 @@
             </li>
           </ul>
         </div>
-        <form class="contact-form" action="#" method="post">
+        <form class="contact-form" action="#" method="post" novalidate>
           <h3>Solicitar catálogo y precios</h3>
           <div class="field-row">
-            <label>Nombre<input type="text" name="nombre" autocomplete="name" placeholder="Tu nombre" required></label>
-            <label>Empresa<input type="text" name="empresa" autocomplete="organization" placeholder="Nombre de tu negocio" required></label>
+            <label>Nombre<input id="contact-name" type="text" name="nombre" autocomplete="name" aria-invalid="false" aria-describedby="contact-name-error" placeholder="Tu nombre" required><span class="field-error" id="contact-name-error"></span></label>
+            <label>Empresa<input id="contact-company" type="text" name="empresa" autocomplete="organization" aria-invalid="false" aria-describedby="contact-company-error" placeholder="Nombre de tu negocio" required><span class="field-error" id="contact-company-error"></span></label>
           </div>
           <div class="field-row">
-            <label>Correo<input type="email" name="correo" autocomplete="email" placeholder="correo@ejemplo.com" required></label>
-            <label>Teléfono / WhatsApp<input type="tel" name="telefono" autocomplete="tel" placeholder="+00 000 000 0000"></label>
+            <label>Correo<input id="contact-email" type="email" name="correo" autocomplete="email" aria-invalid="false" aria-describedby="contact-email-error" placeholder="correo@ejemplo.com" required><span class="field-error" id="contact-email-error"></span></label>
+            <label>Teléfono / WhatsApp<input id="contact-phone" type="tel" name="telefono" autocomplete="tel" aria-invalid="false" aria-describedby="contact-phone-error" placeholder="+00 000 000 0000"><span class="field-error" id="contact-phone-error"></span></label>
           </div>
           <label>¿Qué línea te interesa?
             <select name="linea">
@@ -324,6 +311,7 @@
           <label>Mensaje<textarea name="mensaje" rows="3" placeholder="Cuéntanos tu volumen estimado de compra..."></textarea></label>
           <button class="btn btn-primary" type="submit">Enviar solicitud</button>
           <p class="form-note">Completa los campos requeridos para preparar tu consulta comercial.</p>
+          <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
           <a class="whatsapp-link" href="https://wa.me/593999999999">Escribir por WhatsApp (número demostrativo)</a>
         </form>
       </div>

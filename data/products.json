@@ -1,0 +1,51 @@
+{
+  "currency": "USD",
+  "updatedAt": "2026-10-05T12:00:00-05:00",
+  "products": [
+    {
+      "id": "aclarante-serum",
+      "name": "Sérum Aclarante Dermaclar",
+      "category": "Antimanchas",
+      "description": "Sérum facial para complementar una rutina de cuidado enfocada en tono desigual.",
+      "price": 18.5,
+      "image": "assets/product-aclarante.svg",
+      "imageAlt": "Frasco de producto para el cuidado facial"
+    },
+    {
+      "id": "control-gel-limpiador",
+      "name": "Gel Limpiador Control Dermaclar",
+      "category": "Piel grasa",
+      "description": "Limpiador facial para piel grasa y con tendencia acneica.",
+      "price": 12.75,
+      "image": "assets/product-control.svg",
+      "imageAlt": "Producto cosmético para limpieza facial"
+    },
+    {
+      "id": "hidra-crema-facial",
+      "name": "Crema Facial Hidra Dermaclar",
+      "category": "Hidratación",
+      "description": "Crema hidratante para acompañar el cuidado diario de la barrera cutánea.",
+      "price": 16.25,
+      "image": "assets/product-hidra.svg",
+      "imageAlt": "Envase de crema para el cuidado de la piel"
+    },
+    {
+      "id": "solar-protector-facial",
+      "name": "Protector Solar Facial Dermaclar",
+      "category": "Protección solar",
+      "description": "Protector facial para integrar en una rutina de cuidado durante el día.",
+      "price": 20,
+      "image": "assets/product-solar.svg",
+      "imageAlt": "Productos de cuidado facial sobre una superficie clara"
+    },
+    {
+      "id": "gentle-crema-calmante",
+      "name": "Crema Calmante Gentle Dermaclar",
+      "category": "Piel sensible",
+      "description": "Crema facial para una rutina de cuidado suave en pieles sensibles.",
+      "price": 17.4,
+      "image": "assets/product-gentle.svg",
+      "imageAlt": "Envase de producto para cuidado facial suave"
+    }
+  ]
+}
